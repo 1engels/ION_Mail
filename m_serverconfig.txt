@@ -1,0 +1,11 @@
+# SMTP SERVER IP
+10.164.1.5
+# Sender name
+MEDIDOR ION
+# Subject
+[Alert]
+# Destination with commas
+someone@schneider-electric.com
+# GMT
+-5
+#
