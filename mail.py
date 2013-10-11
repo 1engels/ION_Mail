@@ -19,10 +19,10 @@ class Mailer():
 
 # sys.argv = [ exe name , param 1 (eventcode), param 2 (timestamp)]
 	def ParseGetVars(self):
-		self.event = sys.argv[1]
-		self.timestamp = sys.argv[2]
-		#self.event = "1" # fot test
-		#self.timestamp = "1381463561"  # for test
+		self.event = str(sys.argv[1])
+		self.timestamp = str(sys.argv[2])
+		#self.event = "1"
+		#self.timestamp = "1381463561"
 
 	def OpenConfigFile(self):
 		mailfile = []
@@ -104,6 +104,7 @@ class Mailer():
 
 		conn = SMTP(self.SMTPserver)
 		conn.set_debuglevel(False)
+		#conn.login(USERNAME, PASSWORD)
 		conn.sendmail(self.sender, self.destination, msg.as_string())
 		conn.close()
 		
