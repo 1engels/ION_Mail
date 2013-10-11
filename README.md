@@ -23,6 +23,9 @@ CALLING THE PROGRAM FROM Launching Module
 =========================================
 
 Link two inputs to Launching Module:
-1. Timestamp: This is a numeric value, it represents the value in seconds since 1st Jan 1970
+
+1. Event: This is a numeric value, it is the event code to search in the m_message.txt
+
+2. Timestamp: This is a numeric value, it represents the value in seconds since 1st Jan 1970
 
 
