@@ -21,7 +21,7 @@ class Mailer():
 # sys.argv = [ exe name , param 1 (eventcode), param 2 (timestamp)]
 	def ParseGetVars(self):
 		self.dirname = os.path.dirname(str(sys.argv[0]))
-		if not sys.argv[1] or not sys.argv[2]:
+		if len(sys.argv)<3:
 			self.event = "1"
 			self.timestamp = "1381463561"
 		else:
