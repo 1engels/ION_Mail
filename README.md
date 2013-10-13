@@ -41,6 +41,7 @@ Also Launching module with Run Command setup variable: c:\ION_Mail\write.exe 1 1
 Run it! You'll get an mail saying:
 
 Trip reason: 1st Stage - Freq min
+
 Trip time: 10/13/2013 09:29:52
 
 Enjoy it!
