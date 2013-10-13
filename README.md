@@ -32,16 +32,14 @@ Link two inputs to Launching Module:
 SAMPLE
 ======
 
-If you have configurated m_serverconfig.txt with GMT-5
-Also your Launching module with Run Command setup variable: c:\ION_Mail\dist\write.exe 1 1381674592
+Put the 4 files into this directory: C:/ION_Mail
+Configure m_serverconfig.txt with your server data and leave GMT-5
+Also Launching module with Run Command setup variable: c:\ION_Mail\write.exe 1 1381674592
 
-And your using the files charged in this project, then you'll get an mail saying:
+Run it! You'll get an mail saying:
 
 Trip reason: 1st Stage - Freq min
 Trip time: 10/13/2013 09:29:52
 
 Enjoy it!
 If you have more ideas just feel free to contact me.
-
-
-
