@@ -5,15 +5,15 @@ This is a program used for sending mails using launching module in ION Enterpris
 
 It takes three external files to work.
 
-1. m_body.html
+1.- m_body.html
 
 This file contains the body of the mail, for a better presentation it must be an html file, so we can customize it.
 
-2. m_message.txt
+2.- m_message.txt
 
 This file contains the list of messages that can be desplayed on the message related to some given event.
 
-3. m_serverconfig.txt
+3.- m_serverconfig.txt
 
 This file contains the server configuration values like SMTP Server IP, sender name, destination list and Timezone
 (I use GMT -5 for Peru)
