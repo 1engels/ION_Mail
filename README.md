@@ -1,7 +1,7 @@
 ION_mail
 ========
 
-Program to send mail using launching module in ION Enterprise or PME
+This is a program used for sending mails using launching module in ION Enterprise or PME.
 
 It takes three external files to work.
 
@@ -16,7 +16,7 @@ This file contains the list of messages that can be desplayed on the message rel
 3. m_serverconfig.txt
 
 This file contains the server configuration values like SMTP Server IP, sender name, destination list and Timezone
-(I use GMT -5 for Peru in my file)
+(I use GMT -5 for Peru)
 
 
 CALLING THE PROGRAM FROM Launching Module
@@ -27,5 +27,20 @@ Link two inputs to Launching Module:
 1. Event: This is a numeric value, it is the event code to search in the m_message.txt
 
 2. Timestamp: This is a numeric value, it represents the value in seconds since 1st Jan 1970
+
+
+SAMPLE
+======
+
+If you have configurated m_serverconfig.txt with GMT-5
+Also your Launching module with Run Command setup variable: c:\ION_Mail\dist\write.exe 1 1381674592
+And your using the files charged in this project, then you'll get an mail saying:
+
+Trip reason: 1st Stage - Freq min
+Trip time: 10/13/2013 09:29:52
+
+Enjoy it!
+If you have more ideas just feel free to contact me.
+
 
 
