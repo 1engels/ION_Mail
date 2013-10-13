@@ -27,8 +27,6 @@ class Mailer():
 		else:
 			self.event = str(sys.argv[1])
 			self.timestamp = str(sys.argv[2])
-		#self.event = "1"
-		#self.timestamp = "1381463561"
 
 	def OpenConfigFile(self):
 		mailfile = []
