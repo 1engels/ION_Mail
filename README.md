@@ -32,6 +32,8 @@ Link two inputs to Launching Module:
 SAMPLE
 ======
 
+Convert mail.py to mail.exe using py2exe
+
 Put the 4 files into this directory: C:/ION_Mail
 
 Configure m_serverconfig.txt with your server data and leave GMT-5
