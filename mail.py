@@ -34,7 +34,7 @@ class Mailer():
 			for line in f.readlines():
 				if line[0:1]!="#":
 					mailfile.append(line[0:-1])
-		# mailfile = [ IP smtp server , sender name, subject, mailto ]
+# mailfile = [ IP smtp server , sender name, subject, mailto ]
 		dest = mailfile[3].split(",")
 		for item in dest:
 			self.destination.append(item.strip())
