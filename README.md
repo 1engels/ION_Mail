@@ -34,6 +34,7 @@ SAMPLE
 
 If you have configurated m_serverconfig.txt with GMT-5
 Also your Launching module with Run Command setup variable: c:\ION_Mail\dist\write.exe 1 1381674592
+
 And your using the files charged in this project, then you'll get an mail saying:
 
 Trip reason: 1st Stage - Freq min
