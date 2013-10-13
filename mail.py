@@ -8,8 +8,9 @@ import datetime
 class Mailer():
 	def __init__(self):
 		self.eventlist = []
+		self.dirname = ''
 		self.event = None
-		self.timestamp = ""
+		self.timestamp = ''
 		self.datetime = None
 		self.SMTPserver = None
 		self.sender = None
@@ -19,14 +20,19 @@ class Mailer():
 
 # sys.argv = [ exe name , param 1 (eventcode), param 2 (timestamp)]
 	def ParseGetVars(self):
-		self.event = str(sys.argv[1])
-		self.timestamp = str(sys.argv[2])
+		self.dirname = os.path.dirname(str(sys.argv[0]))
+		if not sys.argv[1] or not sys.argv[2]:
+			self.event = "1"
+			self.timestamp = "1381463561"
+		else:
+			self.event = str(sys.argv[1])
+			self.timestamp = str(sys.argv[2])
 		#self.event = "1"
 		#self.timestamp = "1381463561"
 
 	def OpenConfigFile(self):
 		mailfile = []
-		with open('m_serverconfig.txt', 'r') as f:
+		with open(self.dirname + "\m_serverconfig.txt", 'r') as f:
 			for line in f.readlines():
 				if line[0:1]!="#":
 					mailfile.append(line[0:-1])
@@ -43,7 +49,7 @@ class Mailer():
 			self.gmt=0
 
 	def OpenMessageFile(self):
-		with open("m_message.txt", 'r') as f:
+		with open(self.dirname + "\m_message.txt", 'r') as f:
 			for line in f.readlines():
 				self.eventlist.append(line[0:-1])
 
@@ -62,7 +68,7 @@ class Mailer():
 			self.event = "No event found"
 
 	def OpenBodyFile(self):
-		with open("m_body.html", 'r') as f:
+		with open(self.dirname + "\m_body.html", 'r') as f:
 			for line in f.readlines():
 				self.body += line
 		self.body=self.body.replace("$event$", self.event)
