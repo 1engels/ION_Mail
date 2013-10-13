@@ -33,7 +33,9 @@ SAMPLE
 ======
 
 Put the 4 files into this directory: C:/ION_Mail
+
 Configure m_serverconfig.txt with your server data and leave GMT-5
+
 Also Launching module with Run Command setup variable: c:\ION_Mail\write.exe 1 1381674592
 
 Run it! You'll get an mail saying:
