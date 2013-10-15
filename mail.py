@@ -8,29 +8,32 @@ import datetime
 class Mailer():
 	def __init__(self):
 		self.eventlist = []
-		self.dirname = ''
-		self.event = None
-		self.timestamp = ''
+		self.foldername = None
+		self.event = 0
+		self.timestamp = 1381463561
 		self.datetime = None
 		self.SMTPserver = None
 		self.sender = None
-		self.text_subtype = 'html' # typical values for text_subtype are plain, html, xml
+		self.text_subtype = 'html' # plain, html, xml
 		self.destination = []
 		self.body = ""
+		self.gmt = 0
 
 # sys.argv = [ exe name , param 1 (eventcode), param 2 (timestamp)]
 	def ParseGetVars(self):
-		self.dirname = os.path.dirname(str(sys.argv[0]))
+		self.foldername = os.path.dirname(str(sys.argv[0]))
 		if len(sys.argv)<3:
-			self.event = "1"
-			self.timestamp = "1381463561"
+			self.event = 0
+			self.timestamp = 1381463561
 		else:
 			self.event = str(sys.argv[1])
+			self.event = self.event[0:-3]
 			self.timestamp = str(sys.argv[2])
+			self.timestamp = self.timestamp[0:-3]
 
 	def OpenConfigFile(self):
 		mailfile = []
-		with open(self.dirname + "\m_serverconfig.txt", 'r') as f:
+		with open(self.foldername + '/m_serverconfig.txt', 'r') as f:
 			for line in f.readlines():
 				if line[0:1]!="#":
 					mailfile.append(line[0:-1])
@@ -47,7 +50,7 @@ class Mailer():
 			self.gmt=0
 
 	def OpenMessageFile(self):
-		with open(self.dirname + "\m_message.txt", 'r') as f:
+		with open(self.foldername  + '/m_message.txt', 'r') as f:
 			for line in f.readlines():
 				self.eventlist.append(line[0:-1])
 
@@ -66,7 +69,7 @@ class Mailer():
 			self.event = "No event found"
 
 	def OpenBodyFile(self):
-		with open(self.dirname + "\m_body.html", 'r') as f:
+		with open(self.foldername + '/m_body.html', 'r') as f:
 			for line in f.readlines():
 				self.body += line
 		self.body=self.body.replace("$event$", self.event)
@@ -77,7 +80,7 @@ class Mailer():
 		self.OpenConfigFile()
 		self.OpenMessageFile()
 		self.TimestampConvert()
-		self.SelectEvent(self.event, self.eventlist)
+		self.SelectEvent(str(self.event), self.eventlist)
 		self.OpenBodyFile()
 		content=self.body
 		content_test = """
@@ -111,6 +114,6 @@ class Mailer():
 		#conn.login(USERNAME, PASSWORD)
 		conn.sendmail(self.sender, self.destination, msg.as_string())
 		conn.close()
-		
+
 mail = Mailer()
 mail.MainMail()
