@@ -16,7 +16,7 @@ This file contains the list of messages that can be desplayed on the message rel
 3.- m_serverconfig.txt
 
 This file contains the server configuration values like SMTP Server IP, sender name, destination list and Timezone
-(I use GMT -5 for Peru)
+(I use GMT 0 if your linking localtime from clock module)
 
 
 CALLING THE PROGRAM FROM Launching Module
@@ -32,13 +32,15 @@ Link two inputs to Launching Module:
 SAMPLE
 ======
 
-Convert mail.py to mail.exe using py2exe
+(You can convert mail.py to mail.exe using py2exe)
 
 Put the 4 files into this directory: C:/ION_Mail
 
-Configure m_serverconfig.txt with your server data and leave GMT-5
+Configure m_serverconfig.txt with your server data and leave GMT 0 (Clock module sends local time)
 
-Also Launching module with Run Command setup variable: c:\ION_Mail\mail.exe 1 1381674592
+Also Launching module with Run Command setup variable: 
+
+python C:/ION_Mail/mail.py 1 1381674592
 
 Run it! You'll get an mail saying:
 
