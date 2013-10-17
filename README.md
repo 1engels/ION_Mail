@@ -16,7 +16,7 @@ This file contains the list of messages that can be desplayed on the message rel
 3.- m_serverconfig.txt
 
 This file contains the server configuration values like SMTP Server IP, sender name, destination list and Timezone
-(I use GMT 0 if your linking localtime from clock module)
+(Use GMT 0 if your linking localtime from clock module)
 
 
 CALLING THE PROGRAM FROM Launching Module
