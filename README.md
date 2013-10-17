@@ -42,7 +42,7 @@ Also Launching module with Run Command setup variable:
 
 python C:/ION_Mail/mail.py 1 1381674592
 
-Run it! You'll get an mail saying:
+Run it! You'll get a mail saying:
 
 Trip reason: 1st Stage - Freq min
 
